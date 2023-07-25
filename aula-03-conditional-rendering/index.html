@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App VueJS</title>
+</head>
+<body>
+    <div id="app">
+        <h1> Vue App </h1>
+        <p> {{ message }} </p>
+
+        <img style="width: 300px" :src="product.image" :alt="product.title">
+        <strong v-if="product.stars > 0"> {{ product.stars }} </strong>
+        
+        <img style="width: 300px" :src="product2.image" :alt="product2.title">
+        <strong v-show="product2.stars > 0"> {{ product2.stars }} </strong>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
