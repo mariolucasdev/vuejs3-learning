@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>App VueJS</title>
+
+    <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
     <div id="app">
@@ -29,15 +31,11 @@
                     <img style="width: 300px" :src="product.image" :alt="product.title">
                     <strong v-if="product.stars > 0"> {{ product.stars }} </strong>
     
-                    <a href="#"
-                        v-on:click.prevent="removeCart(product)"
-                        v-if="inCart(product)"> REMOVE CART
-                    </a>
-                    
-                    <a href="#"
+                    <button :disabled="inCart(product)"
                         v-on:click.prevent="addCart(product)"
-                        v-else> ADD CART
-                    </a>
+                        :class="{'button-disabled' : inCart(product)}">
+                        ADD CART
+                    </button>
                </li> 
             </ul>
         </div>
