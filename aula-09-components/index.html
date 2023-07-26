@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App VueJS</title>
+
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <div id="app">
+        <div :style="styles">
+
+            <label for="themeBlack">
+                <input type="checkbox"
+                    :checked="themeBlack"
+                    @click="toggleTheme"
+                    name="themeBlack"
+                    id="themeBlack"> Tema Escuro
+            </label>
+
+            <h1> {{ title }} </h1>
+            <p> {{ fullName }} </p>
+            <hr>
+    
+            <h3> Carrinho ({{ cart.length }}) </h3>
+    
+            <ul>
+               <li v-for="(product, index) in products" :key="index">
+                    <product-detail
+                        :product="product"
+                        :product-in-cart="inCart(product)">
+                    </product-detail>
+               </li> 
+            </ul>
+        </div>
+        
+    </div> <!-- #app -->
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="app.js"></script>
+    <script src="./components/ProductDetail.js"></script>
+    <script>
+        app.mount('#app')
+    </script>
+</body>
+</html>
