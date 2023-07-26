@@ -1,0 +1,10 @@
+body {
+    padding: 0%;
+    margin: 0%;
+}
+
+.button-disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}
